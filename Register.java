@@ -1,17 +1,20 @@
+
+import java.util.Map;
 import java.util.Scanner;
 
 public class Register {
 
     //Declare the denominations
-    private Denomination[] types = new Denomination[] {new Denomination("Hundred-Dollar",100,"bill",".png"),new Denomination("Fifty-Dollar",50,"bill",".png"),
+     private static Denomination[] types = new Denomination[] {new Denomination("Hundred-Dollar",100,"bill",".png"),new Denomination("Fifty-Dollar",50,"bill",".png"),
                                                        new Denomination("Twenty-Dollar",20,"bill",".png"),new Denomination("Ten-Dollar",10,"bill",".png"),
                                                        new Denomination("Five-Dollar",5,"bill",".png"), new Denomination("One-Dollar",1,"bill",".png"),
                                                        new Denomination("Quarter",0.25,"coin",".png"),new Denomination("Dime",0.1,"coin",".png"),
                                                        new Denomination("Nickel",0.05,"coin",".png"),new Denomination("Penny",0.01,"coin",".png")};
 
-
+    //private Purse p = new Purse();
 
     public Purse makeChange(double amt) {
+
 
         Purse p = new Purse();
         // Number of Denominations
@@ -23,7 +26,7 @@ public class Register {
             if(numD >= 1)
             {
                 p.add(n,(int)numD);
-                amt-=n.amt();
+                (amt)-=n.amt()*(int)numD;
             }
 
         }
@@ -35,9 +38,24 @@ public class Register {
         System.out.print("Enter Amount: ");
         double amt = input.nextDouble();
 
-        Purse p = new Register().makeChange(amt);
+       Purse p = new Register().makeChange(amt);
 
         System.out.println(p.getValue());
+        if(p.getValue() == 0)
+        {
+            System.out.println("Empty Purse.");
+        }
+
+
+
+        for(Denomination n: types) {
+            if(p.getCash().containsKey(n)){
+                if(p.getCash().get(n) > 0) {
+                    System.out.println(p.getCash().get(n) + " " + n.name());
+                }
+
+            }
+        }
 
 
     }

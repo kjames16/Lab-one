@@ -42,4 +42,8 @@ public class Purse {
         String out = Double.toString(this.getValue());
         return out;
    }
+
+   public Map<Denomination, Integer> getCash() {
+        return cash;
+   }
 }
