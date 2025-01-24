@@ -19,6 +19,9 @@ public class PursePanel extends JPanel {
 
         this.setPreferredSize(new Dimension(100,100));
         JLabel label = new JLabel();
+        label.setIcon(new ImageIcon("Dime.jpeg"));
+
+        this.add(label);
 
         for(Denomination n: types) {
             if(purse.getCash().containsKey(n)){
@@ -37,7 +40,7 @@ public class PursePanel extends JPanel {
 
 
         //this.add(label);
-        //repaint(10,50,50,20,15);
+        repaint(10,50,50,20,15);
     }
 
     }
