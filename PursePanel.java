@@ -11,25 +11,27 @@ public class PursePanel extends JPanel {
             new Denomination("Nickel",0.05,"coin","Nickel.png"),new Denomination("Penny",0.01,"coin","Penny.jpeg")};
 
     public void setPurse(Purse p) {
-        purse = p;
+        this.purse = p;
     }
 
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g, Purse purse) {
         super.paintComponent(g);
 
-        this.setPreferredSize(new Dimension(100,100));
+        this.setPreferredSize(new Dimension(200,100));
         JLabel label = new JLabel();
-        label.setIcon(new ImageIcon("Dime.jpeg"));
 
-        this.add(label);
+
 
         for(Denomination n: types) {
             if(purse.getCash().containsKey(n)){
                 if(purse.getCash().get(n) > 0) {
+                    //JLabel label = new JLabel();
                     label.setIcon(new ImageIcon(n.img()));
+                    this.add(label);
                     int i = 0;
                     do{
-                        this.add(label);
+                        repaint();
+                        i++;
                     }while(i < purse.getCash().get(n));
 
                 }

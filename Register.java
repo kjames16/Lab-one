@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Register {
 
     //Declare the denominations
-     private static Denomination[] types = new Denomination[] {new Denomination("Hundred-Dollar",100,"bill",".png"),new Denomination("Fifty-Dollar",50,"bill",".png"),
-                                                       new Denomination("Twenty-Dollar",20,"bill",".png"),new Denomination("Ten-Dollar",10,"bill",".png"),
-                                                       new Denomination("Five-Dollar",5,"bill",".png"), new Denomination("One-Dollar",1,"bill",".png"),
-                                                       new Denomination("Quarter",0.25,"coin",".png"),new Denomination("Dime",0.1,"coin",".png"),
-                                                       new Denomination("Nickel",0.05,"coin",".png"),new Denomination("Penny",0.01,"coin",".png")};
+     private static Denomination[] types = new Denomination[] {new Denomination("Hundred-Dollar",100,"bill","Hundred-Dollar.jpeg"),new Denomination("Fifty-Dollar",50,"bill","Fifty-Dollar.jpeg"),
+            new Denomination("Twenty-Dollar",20,"bill","Twenty-Dollar.jpeg"),new Denomination("Ten-Dollar",10,"bill","Ten-Dollar.jpeg"),
+            new Denomination("Five-Dollar",5,"bill","Five-Dollar.jpeg"), new Denomination("One-Dollar",1,"bill","One-Dollar.jpeg"),
+            new Denomination("Quarter",0.25,"coin","Quarter.jpeg"),new Denomination("Dime",0.1,"coin","Dime.jpeg"),
+            new Denomination("Nickel",0.05,"coin","Nickel.png"),new Denomination("Penny",0.01,"coin","Penny.jpeg")};
 
 
     public Purse makeChange(double amt) {
