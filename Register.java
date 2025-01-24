@@ -11,7 +11,6 @@ public class Register {
                                                        new Denomination("Quarter",0.25,"coin",".png"),new Denomination("Dime",0.1,"coin",".png"),
                                                        new Denomination("Nickel",0.05,"coin",".png"),new Denomination("Penny",0.01,"coin",".png")};
 
-    //private Purse p = new Purse();
 
     public Purse makeChange(double amt) {
 
